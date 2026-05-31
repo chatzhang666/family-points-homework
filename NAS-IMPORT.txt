@@ -1,0 +1,25 @@
+QNAP Container Station 更新说明
+
+推荐方式：使用局域网镜像仓库，不再导入 tar。
+
+1. 在这台 Mac 执行：
+   npm run nas:publish
+
+2. 在 Container Station 中提取镜像：
+   192.168.31.98:5500/family-points:nas-stable
+
+3. 停止并删除旧的 `family-points` 容器，但不要删除 `/Public/family-points/data`。
+
+4. 重新创建 `family-points` 容器，保持以下配置：
+   - 镜像：192.168.31.98:5500/family-points:nas-stable
+   - 容器端口：3000
+   - 主机端口：32769
+   - 卷映射：/Public/family-points/data -> /app/data
+   - 环境变量：
+     DATABASE_PATH=/app/data/family-points.db
+     HOSTNAME=0.0.0.0
+     NODE_ENV=production
+     PORT=3000
+
+5. 更新完成后在局域网访问：
+   http://192.168.31.10:32769

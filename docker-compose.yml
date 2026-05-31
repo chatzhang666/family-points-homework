@@ -1,0 +1,14 @@
+name: family-points
+
+services:
+  family-points:
+    build: .
+    container_name: family-points
+    restart: unless-stopped
+    environment:
+      - DATABASE_PATH=/app/data/family-points.db
+      - SESSION_DAYS=30
+    ports:
+      - "3080:3000"
+    volumes:
+      - ./data:/app/data

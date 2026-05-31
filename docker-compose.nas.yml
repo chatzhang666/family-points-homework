@@ -1,0 +1,16 @@
+name: family-points
+
+services:
+  family-points:
+    image: 192.168.31.98:5500/family-points:nas-stable
+    container_name: family-points
+    restart: unless-stopped
+    environment:
+      - DATABASE_PATH=/app/data/family-points.db
+      - HOSTNAME=0.0.0.0
+      - NODE_ENV=production
+      - PORT=3000
+    ports:
+      - "32769:3000"
+    volumes:
+      - /Public/family-points/data:/app/data

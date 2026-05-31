@@ -1,0 +1,9 @@
+node_modules
+.next
+data/*
+!data/family-points.db
+backups
+.git
+.DS_Store
+*.log
+.env*

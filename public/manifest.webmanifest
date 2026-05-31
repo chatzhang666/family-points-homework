@@ -1,0 +1,16 @@
+{
+  "name": "快乐任务屋",
+  "short_name": "任务屋",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8eb",
+  "theme_color": "#65afd1",
+  "icons": [
+    {
+      "src": "/app-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
